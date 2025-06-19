@@ -55,4 +55,6 @@ body {
     color: var(--btnFontColor);
     background-color: var(--btnBg);
 }
-.btn:focus{outline-style: none;}
+.btn:focus {
+    outline-style: none;
+}
