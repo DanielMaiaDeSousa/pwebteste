@@ -14,10 +14,14 @@ li {
 .light-theme {
     --bg: var(--green);
     --fontColor: var(--black);
+    --btnBg: var(--black);
+    --btnFontColor: var(--white);
 }
 .dark-theme {
     --bg: var(--black); /* Correção aqui */
     --fontColor: var(--green); /* Correção aqui */
+    --btnBg: var(--black);
+    --btnFontColor: var(--white);
 }
 
 :root {
@@ -51,3 +55,4 @@ body {
     color: var(--btnFontColor);
     background-color: var(--btnBg);
 }
+.btn:focus{outline-style: none;}
