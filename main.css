@@ -1,60 +1,82 @@
+/* Definições de fontes e listas padrão */
 body {
     font-family: monospace;
 }
+
 ul {
     font-family: helvetica;
 }
+
 li {
     list-style: circle;
 }
-.list {
+
+.list { /* Note: Usei '.list' com 'l' minúsculo para consistência com o HTML */
     list-style: square;
 }
 
-.light-theme {
-    --bg: var(--green);
-    --fontColor: var(--black);
-    --btnBg: var(--black);
-    --btnFontColor: var(--white);
-}
-.dark-theme {
-    --bg: var(--black); /* Correção aqui */
-    --fontColor: var(--green); /* Correção aqui */
-    --btnBg: var(--black);
-    --btnFontColor: var(--white);
-}
-
+/* Definição das variáveis de cor raiz */
 :root {
     --green: #00FF00;
     --white: #ffffff;
     --black: #000000;
 }
 
-*{
+/* Temas */
+.light-theme {
+    --bg: var(--green);
+    --fontColor: var(--black);
+    --btnBg: var(--black);
+    --btnFontColor: var(--white);
+}
+
+.dark-theme {
+    --bg: var(--black);
+    --fontColor: var(--green);
+    --btnBg: var(--green); /* Mudei para green para o botão se destacar no tema escuro */
+    --btnFontColor: var(--black);
+}
+
+/* Estilos globais (aplicados a todos os elementos) */
+* {
     color: var(--fontColor);
     font-family: helvetica;
-
+    /* Apenas para teste inicial: remover margens e paddings padrão */
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
 }
 
+/* Aplica o background do tema ao corpo */
 body {
     background: var(--bg);
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Estilos do botão */
 .btn {
-    color: var(--btnFontColor);
-    background-color: var(--btnBg);
-}
-.btn {
-    position: absolute;
+    position: absolute; /* Para posicionar o botão livremente */
     top: 20px;
-    left: 250px;
+    left: 20px; /* Ajustei para 20px para não ficar tão "colado" */
     height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    width: 120px; /* Aumentei a largura para caber o texto "Mudar Tema" */
+    border-radius: 25px; /* Bordas arredondadas para um visual mais suave */
     border: none;
+    cursor: pointer; /* Indica que o elemento é clicável */
+    font-size: 1rem; /* Tamanho da fonte do botão */
     color: var(--btnFontColor);
     background-color: var(--btnBg);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave nas cores */
 }
+
+.btn:hover {
+    opacity: 0.8; /* Pequena opacidade ao passar o mouse */
+}
+
 .btn:focus {
-    outline-style: none;
+    outline: none; /* Remove o contorno padrão ao focar */
 }
