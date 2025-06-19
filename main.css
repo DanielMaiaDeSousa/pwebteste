@@ -16,8 +16,8 @@ li {
     --fontColor: var(--black);
 }
 .dark-theme {
-    --bg: var(--black);
-    --fontColor: var(--green);
+    --bg: var(--black); /* Correção aqui */
+    --fontColor: var(--green); /* Correção aqui */
 }
 
 :root {
