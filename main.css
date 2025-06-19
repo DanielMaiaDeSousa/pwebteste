@@ -10,9 +10,6 @@ li {
 .list {
     list-style: square;
 }
-#msg {
-    font-family: monospace;
-}
 
 .light-theme {
     --bg: var(--green);
