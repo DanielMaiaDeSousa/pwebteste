@@ -15,6 +15,26 @@ li {
 }
 
 .light-theme {
-    color: #0000000;
-    background: #00FF00;
+    --bg: var(--green);
+    --fontColor: var(--black);
+}
+.dark-theme {
+    --bg: var(var(--black));
+    --fontColor: var(var(--green));
+}
+
+:root {
+    --green: #00FF00;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+*{
+    color: var(--fontColor);
+    font-family: helvetica;
+
+}
+
+body {
+    background: var(--bg);
 }
